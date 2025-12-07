@@ -1,41 +1,71 @@
-# 🧩 Product Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Shenzhen Great Components</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-We provide original and high-quality components from top global manufacturers.
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">Shenzhen Great Components</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
----
+  <!-- Content Section -->
+  <div class="content">
+    <h2>🧩 Product Portfolio</h2>
+    <p>We provide original and high-quality components from top global manufacturers.</p>
 
-## 🔌 **Semiconductors & ICs**
-- Microcontrollers (MCU/MPU)
-- Memory (Flash, DRAM, EEPROM)
-- Logic ICs
-- Analog & Mixed Signal
+    <!-- Product Categories -->
+    <h3>🔌 <strong>Semiconductors & ICs</strong></h3>
+    <ul>
+      <li>Microcontrollers (MCU/MPU)</li>
+      <li>Memory (Flash, DRAM, EEPROM)</li>
+      <li>Logic ICs</li>
+      <li>Analog & Mixed Signal</li>
+    </ul>
 
----
+    <h3>📡 <strong>RF & Wireless Components</strong></h3>
+    <ul>
+      <li>RF Modules</li>
+      <li>PA / LNA</li>
+      <li>Filters & Diplexers</li>
+    </ul>
 
-## 📡 **RF & Wireless Components**
-- RF Modules  
-- PA / LNA  
-- Filters & Diplexers  
+    <h3>⚡ <strong>Power Solutions</strong></h3>
+    <ul>
+      <li>PMIC</li>
+      <li>DC-DC / LDO</li>
+      <li>Power MOSFET</li>
+      <li>Regulators</li>
+    </ul>
 
----
+    <h3>💾 <strong>Sensors</strong></h3>
+    <ul>
+      <li>Pressure</li>
+      <li>Temperature</li>
+      <li>Accelerometer</li>
+      <li>Magnetometer</li>
+    </ul>
 
-## ⚡ **Power Solutions**
-- PMIC  
-- DC-DC / LDO  
-- Power MOSFET  
-- Regulators  
+    <!-- Contact Us Link -->
+    <h3>📩 Need a Quote?</h3>
+    <p>Click below to contact us:</p>
+    <a href="contact.html" class="cta">Contact Us</a>
+  </div>
 
----
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Shenzhen Great Components. All rights reserved.</p>
+  </footer>
 
-## 💾 **Sensors**
-- Pressure  
-- Temperature  
-- Accelerometer  
-- Magnetometer  
-
----
-
-### 📩 Need a Quote?
-Click below to contact us:
-
-👉 [Contact Us](contact.md)
+</body>
+</html>
