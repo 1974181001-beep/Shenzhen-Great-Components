@@ -30,7 +30,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #007bff;
+      background-color: #c40000; /* 极简高级红色 */
       display: flex;
       justify-content: center;
       padding: 15px 0;
@@ -52,7 +52,7 @@
     }
 
     nav a:hover {
-      color: #ffdb58;
+      color: #ffdb58; /* 悬浮时颜色 */
     }
 
     /* Hero Section */
@@ -140,26 +140,35 @@
       content: '✔';
       position: absolute;
       left: 0;
-      color: #007bff;
+      color: #c40000; /* 红色 */
     }
 
-    /* Footer */
-    footer {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
+    /* Contact Section */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 30px;
+      background-color: white;
       margin-top: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    footer p {
-      font-size: 14px;
+    .contact-info h2 {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    /* WhatsApp跳转按钮特殊样式 */
+    .contact-info p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
     .contact-btn {
       display: inline-block;
-      margin-top: 20px;
       background-color: #25D366;
       color: white;
       padding: 12px 25px;
@@ -171,6 +180,19 @@
 
     .contact-btn:hover {
       background-color: #128C7E;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #c40000; /* 红色 */
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 14px;
     }
 
     @media screen and (max-width: 768px){
@@ -194,7 +216,7 @@
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#products">Products & Services</a>
-      <a href="https://wa.me/8619867755983" target="_blank">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -227,8 +249,20 @@
       <li>Modules & Wireless</li>
       <li>Passive Components</li>
       <li>Laptops and computer accessories</li>
-      <p>If your required brand or product is not listed, please contact us.</p>
     </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-info">
+    <h2>📞 Contact Us</h2>
+    <p>We reply within 1 hour during business days.</p>
+    <p>My name: <strong>Ninety Lan</strong></p>
+    <p>Position: <strong>Owner</strong></p>
+    <p>Email: <strong><a href="mailto:1974181001@qq.com">1974181001@qq.com</a></strong></p>
+    <p>Teams: <strong><a href="mailto:1974181001@qq.com">1974181001@qq.com</a></strong></p>
+    <p>We are available on WhatsApp:</p>
+    <a href="https://wa.me/8619867755983" target="_blank" class="contact-btn">Chat on WhatsApp</a>
+    <p>Our Company Address: Room 803, Unit 2, Building 8, Hongling South Road, Luohu District, Shenzhen, China</p>
   </section>
 
   <!-- Footer Section -->
