@@ -5,33 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shenzhen Great Components</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: #007bff;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 65vh;
+      background: url('your-image-path.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    .cta {
+      background-color: #007bff;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 40px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+
+    .contact-info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Address Section */
+    .address {
+      padding: 40px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    .address h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .address p {
+      font-size: 1.1em;
+    }
+
+    /* Scroll Navigation */
+    .scroll-nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(0, 123, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 100;
+    }
+
+    .scroll-nav a {
+      color: white;
+      display: block;
+      margin: 5px 0;
+      text-decoration: none;
+    }
+
+    .scroll-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Scroll Navigation -->
+  <div class="scroll-nav">
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <!-- Header / Navigation -->
   <header>
     <div class="logo">Shenzhen Great Components</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:1974181001@qq.com">Email</a>
+      <a href="https://wa.me/8619867755983" target="_blank">WhatsApp</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <div class="hero">
-    <div class="hero-text">
-      <h1>Welcome to Shenzhen Great Components</h1>
-      <p>We provide high-quality components and professional services to meet your needs.</p>
-      <a href="about.html" class="cta">Learn More</a>
-    </div>
+    <h1>Shenzhen Great Components</h1>
+    <p>Global Electronic Components Distributor</p>
+    <p>We supply original & authorized electronic components from top global brands. Our mission is simple: fast delivery, reliable sourcing, competitive pricing.</p>
+    <a href="#about" class="cta">Learn More</a>
   </div>
 
   <!-- Content Section -->
   <div class="content">
-    <h2>Our Mission</h2>
-    <p>To deliver exceptional products and services while ensuring a seamless customer experience.</p>
+    <h2>Product Categories</h2>
+    <p>ICs & Semiconductors | RF Components | Power Management | MCU / MPU | Memory Chips</p>
+  </div>
+
+  <!-- Why Choose Us Section -->
+  <div class="content">
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>✔ 100% original & traceable</li>
+      <li>✔ Global procurement network</li>
+      <li>✔ Fast quotation (within 1 hour)</li>
+      <li>✔ Professional engineers support</li>
+      <li>✔ Stable stock + flexible sourcing</li>
+      <li>✔ Door-to-door worldwide shipping</li>
+    </ul>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="contact-info">
+    <h2>Contact Us</h2>
+    <p>WhatsApp: <a href="https://wa.me/8619867755983" target="_blank">+86 19867755983</a></p>
+    <p>Email: <a href="mailto:1974181001@qq.com">1974181001@qq.com</a></p>
+  </div>
+
+  <!-- Address Section -->
+  <div class="address">
+    <h3>Our Address</h3>
+    <p>China, Guangdong Province, Shenzhen, Luohu District, Hongling Nan Residential Area, Building 8, Unit 2, 803</p>
   </div>
 
   <!-- Footer -->
