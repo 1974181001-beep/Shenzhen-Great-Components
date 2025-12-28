@@ -108,434 +108,14 @@
 
     section h2 {
       font-size: 2.5em;
-      margin-bottom: 30px;
       font-weight: 600;
       text-align: center;
-    }
-
-    section p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    section ul {
-      list-style: none;
-      font-size: 1.2em;
-      line-height: 1.8;
-      max-width: 600px;
-      margin: 0 auto;
-      padding-left: 0;
-    }
-
-    section ul li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    section ul li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: #c40000; /* 红色 */
-    }
-
-    /* Products & Services 定制样式 */
-    .products-section {
-      padding: 50px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin: 40px 0;
-    }
-
-    .service-item {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      border: 2px solid #c40000;
-      transition: all 0.3s ease;
-      height: 100%;
-    }
-
-    .service-item:hover {
-      border-color: #c40000;
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(196, 0, 0, 0.1);
-    }
-
-    .service-item h3 {
-      color: #333333;
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .service-item h3 i {
-      color: #c40000;
-    }
-
-    .service-item p {
-      color: #555555;
-      margin-bottom: 0;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    /* Carousel 样式 */
-    .carousel-wrapper {
-      position: relative;
-      width: 100%;
-      margin: 60px 0 40px;
-      overflow: hidden;
-      user-select: none;
-      min-height: 400px;
-    }
-
-    .brands-carousel {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-      padding: 20px 0;
-      min-height: 400px;
-    }
-
-    .brand-card {
-      flex: 0 0 380px;
-      margin: 0 20px;
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      border: 2px solid #c40000;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      cursor: grab;
-      transform-origin: center center;
-      position: relative;
-    }
-
-    .brand-card:active {
-      cursor: grabbing;
-    }
-
-    .brand-card.active {
-      transform: scale(1.05);
-      z-index: 5;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      border-color: #c40000;
-      border-width: 3px;
-    }
-
-    .brand-card.prev {
-      transform: translateX(-60px) scale(0.85);
-      opacity: 0.8;
-      z-index: 4;
-    }
-
-    .brand-card.next {
-      transform: translateX(60px) scale(0.85);
-      opacity: 0.8;
-      z-index: 4;
-    }
-
-    .brand-card.prev-prev,
-    .brand-card.next-next {
-      opacity: 0.4;
-      transform: scale(0.7);
-      z-index: 3;
-    }
-
-    /* Brand header with red background */
-    .foreign-brand {
-      padding: 30px;
-      background-color: #c40000;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      min-height: 140px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .foreign-brand::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
-    }
-
-    .foreign-brand h3 {
-      font-size: 1.8rem;
-      margin-bottom: 4px;
-      font-weight: 700;
-    }
-
-    .foreign-brand .brand-name {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      font-weight: 500;
-      max-width: 70%;
-    }
-
-    .domestic-alternatives {
-      padding: 25px;
-    }
-
-    .domestic-alternatives h4 {
-      color: #333333;
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-    }
-
-    .domestic-alternatives h4 i {
-      color: #c40000;
-    }
-
-    .alternative-item {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eeeeee;
-      padding-bottom: 10px;
-    }
-
-    .alt-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #222222;
-    }
-
-    .alt-desc {
-      color: #555555;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      text-align: left;
-    }
-
-    .category-tag {
-      display: inline-block;
-      padding: 4px 10px;
-      background: #fee2e2;
-      color: #c40000;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin-top: 6px;
-      font-weight: 600;
-      border: 1px solid #fecaca;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      cursor: pointer;
-      z-index: 10;
-      color: #c40000;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #c40000;
-    }
-
-    .carousel-btn:hover {
-      background-color: #c40000;
-      color: white;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .carousel-btn:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-      transform: translateY(-50%) scale(1);
-    }
-
-    .carousel-btn.prev {
-      left: 20px;
-    }
-
-    .carousel-btn.next {
-      right: 20px;
-    }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #e2e8f0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .carousel-dot.active {
-      background: #c40000;
-      transform: scale(1.2);
-    }
-
-    .carousel-dot:hover {
-      background: #c40000;
-    }
-
-    /* 改进的产品列表样式 - 更加舒展 */
-    .products-list {
-      list-style: none;
-      margin: 20px 0 0 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .products-list li {
-      background: #fef2f2;
-      padding: 14px 18px;
-      border-radius: 10px;
-      color: #444444;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      border: 1px solid #fecaca;
-      transition: all 0.2s ease;
-      font-size: 1rem;
-      text-align: left;
-      position: relative;
-      padding-left: 45px; /* 增加左边距给图标留空间 */
-    }
-
-    .products-list li:before {
-      content: "✓";
-      color: #c40000;
-      font-weight: bold;
-      font-size: 1.2rem;
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      border-radius: 50%;
-      border: 1px solid #c40000;
-    }
-
-    .products-list li:hover {
-      background: #fee2e2;
-      border-color: #c40000;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(196, 0, 0, 0.1);
-    }
-
-    /* Contact Section */
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 30px;
-      background-color: white;
-      margin-top: 40px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .contact-info h2 {
-      font-size: 2.5em;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .contact-info p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .contact-btn {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-
-    .contact-btn:hover {
-      background-color: #128C7E;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #c40000; /* 红色 */
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
-      font-size: 14px;
-    }
-
-    /* ==================== 新增的 About Us 样式 ==================== */
-    
-    /* About Us 整体样式 */
-    #about {
-      position: relative;
-      padding: 80px 50px 60px;
-    }
-    
-    #about h2 {
-      font-size: 2.5rem;
-      color: #c40000;
-      margin-bottom: 50px;
-      font-weight: 600;
       position: relative;
       padding-bottom: 15px;
+      margin-bottom: 50px;
     }
-    
-    #about h2:after {
+
+    section h2:after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -544,6 +124,14 @@
       width: 80px;
       height: 3px;
       background-color: #c40000;
+    }
+
+    /* ==================== About Us 样式 ==================== */
+    
+    /* About Us 整体样式 */
+    #about {
+      position: relative;
+      padding: 80px 50px 60px;
     }
     
     /* 关于我们内容块样式 */
@@ -661,6 +249,507 @@
       font-size: 1rem;
     }
     
+    /* ==================== Products & Services 样式 ==================== */
+    .products-section {
+      padding: 80px 50px 60px;
+    }
+    
+    /* 服务网格样式 */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .service-item {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid #c40000;
+      transition: all 0.3s ease;
+      height: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .service-item:hover {
+      background-color: #fef2f2;
+      transform: translateX(5px);
+      box-shadow: 0 8px 25px rgba(196, 0, 0, 0.1);
+    }
+    
+    .service-item h3 {
+      color: #333333;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .service-item h3 i {
+      color: #c40000;
+    }
+    
+    .service-item p {
+      color: #555555;
+      margin-bottom: 0;
+      line-height: 1.6;
+      text-align: left;
+    }
+    
+    /* Carousel 样式 - 保持一致风格 */
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      margin: 60px 0 40px;
+      overflow: hidden;
+      user-select: none;
+      min-height: 400px;
+    }
+    
+    .brands-carousel {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+      padding: 20px 0;
+      min-height: 400px;
+    }
+    
+    .brand-card {
+      flex: 0 0 380px;
+      margin: 0 20px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border-left: 4px solid #c40000;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: grab;
+      transform-origin: center center;
+      position: relative;
+    }
+    
+    .brand-card:active {
+      cursor: grabbing;
+    }
+    
+    .brand-card.active {
+      transform: scale(1.05);
+      z-index: 5;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border-left-width: 6px;
+    }
+    
+    .brand-card.prev {
+      transform: translateX(-60px) scale(0.85);
+      opacity: 0.8;
+      z-index: 4;
+    }
+    
+    .brand-card.next {
+      transform: translateX(60px) scale(0.85);
+      opacity: 0.8;
+      z-index: 4;
+    }
+    
+    .brand-card.prev-prev,
+    .brand-card.next-next {
+      opacity: 0.4;
+      transform: scale(0.7);
+      z-index: 3;
+    }
+    
+    /* Brand header with red background */
+    .foreign-brand {
+      padding: 30px;
+      background-color: #c40000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 140px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .foreign-brand::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'Courier New', monospace;
+    }
+    
+    .foreign-brand h3 {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    
+    .foreign-brand .brand-name {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-weight: 500;
+      max-width: 70%;
+    }
+    
+    .domestic-alternatives {
+      padding: 25px;
+    }
+    
+    .domestic-alternatives h4 {
+      color: #333333;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+    
+    .domestic-alternatives h4 i {
+      color: #c40000;
+    }
+    
+    .alternative-item {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 10px;
+    }
+    
+    .alt-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #222222;
+    }
+    
+    .alt-desc {
+      color: #555555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      text-align: left;
+    }
+    
+    .category-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #fee2e2;
+      color: #c40000;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 6px;
+      font-weight: 600;
+      border: 1px solid #fecaca;
+    }
+    
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      cursor: pointer;
+      z-index: 10;
+      color: #c40000;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #c40000;
+    }
+    
+    .carousel-btn:hover {
+      background-color: #c40000;
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .carousel-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: translateY(-50%) scale(1);
+    }
+    
+    .carousel-btn.prev {
+      left: 20px;
+    }
+    
+    .carousel-btn.next {
+      right: 20px;
+    }
+    
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+      background: #c40000;
+      transform: scale(1.2);
+    }
+    
+    .carousel-dot:hover {
+      background: #c40000;
+    }
+    
+    /* 改进的产品列表样式 */
+    .products-list {
+      list-style: none;
+      margin: 20px 0 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    
+    .products-list li {
+      background: #fef2f2;
+      padding: 14px 18px;
+      border-radius: 10px;
+      color: #444444;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      border: 1px solid #fecaca;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      text-align: left;
+      position: relative;
+      padding-left: 45px;
+    }
+    
+    .products-list li:before {
+      content: "✓";
+      color: #c40000;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 50%;
+      border: 1px solid #c40000;
+    }
+    
+    .products-list li:hover {
+      background: #fee2e2;
+      border-color: #c40000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(196, 0, 0, 0.1);
+    }
+    
+    /* ==================== Contact Us 样式 ==================== */
+    .contact-section {
+      padding: 80px 50px 60px;
+      position: relative;
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    /* 联系信息卡片 */
+    .contact-card {
+      background-color: #fef2f2;
+      padding: 35px;
+      border-radius: 8px;
+      border-left: 4px solid #c40000;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .contact-card:hover {
+      background-color: #fee2e2;
+      transform: translateX(5px);
+      box-shadow: 0 8px 25px rgba(196, 0, 0, 0.1);
+    }
+    
+    .contact-card h3 {
+      color: #c40000;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .contact-card h3 i {
+      font-size: 1.2rem;
+    }
+    
+    .contact-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #fecaca;
+    }
+    
+    .contact-info-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    
+    .contact-info-item strong {
+      display: block;
+      color: #333;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    
+    .contact-info-item p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    
+    .contact-info-item a {
+      color: #c40000;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .contact-info-item a:hover {
+      color: #ff3333;
+      text-decoration: underline;
+    }
+    
+    /* 联系按钮区域 */
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+    }
+    
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+    }
+    
+    .email-btn {
+      background-color: white;
+      color: #c40000;
+      border-color: #c40000;
+    }
+    
+    .email-btn:hover {
+      background-color: #c40000;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(196, 0, 0, 0.2);
+    }
+    
+    /* 地址卡片 */
+    .address-card {
+      background-color: #fef2f2;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 4px solid #c40000;
+      margin-top: 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .address-card:hover {
+      background-color: #fee2e2;
+      transform: translateX(5px);
+    }
+    
+    .address-card i {
+      color: #c40000;
+      font-size: 1.5rem;
+      margin-top: 5px;
+    }
+    
+    .address-card h4 {
+      color: #333;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .address-card p {
+      color: #555;
+      line-height: 1.6;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #c40000; /* 红色 */
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    
+    footer p {
+      font-size: 14px;
+    }
+    
     @media screen and (max-width: 1024px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -670,6 +759,11 @@
       .brand-card {
         flex: 0 0 320px;
         margin: 0 15px;
+      }
+      
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
     }
 
@@ -682,8 +776,9 @@
         font-size: 2em;
       }
       
-      section p {
-        font-size: 1em;
+      section {
+        padding: 60px 20px 40px;
+        margin: 60px auto;
       }
       
       .services-grid {
@@ -722,7 +817,7 @@
       }
       
       /* 响应式 About Us 样式 */
-      #about {
+      #about, .products-section, .contact-section {
         padding: 60px 20px 40px;
       }
       
@@ -750,6 +845,37 @@
       
       .video-container {
         padding: 15px;
+      }
+      
+      .contact-actions {
+        flex-direction: column;
+      }
+      
+      .contact-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      section.hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      section.hero p {
+        font-size: 1.1rem;
+      }
+      
+      section h2 {
+        font-size: 1.8rem;
+      }
+      
+      .service-item, .contact-card {
+        padding: 25px 20px;
+      }
+      
+      .service-item h3, .contact-card h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -822,9 +948,7 @@
 
   <!-- Products & Services Section -->
   <section id="products" class="products-section">
-    <h2 style="margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #f1f5f9;">
-    📦 Products & Services
-    </h2>
+    <h2>Products & Services</h2>
 
     <!-- Services Grid - Four Cards -->
     <div class="services-grid">
@@ -855,19 +979,68 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-info">
-    <h2>📞 Contact Us</h2>
-    <p>We reply within 1 hour during business days.</p>
-    <p><strong>Ninety Lan</strong></p>
-    <p>Email: <strong><a href="mailto:1974181001@qq.com">1974181001@qq.com</a></strong></p>
-    <p>Teams: <strong><a href="mailto:1974181001@qq.com">1974181001@qq.com</a></strong></p>
+  <!-- Contact Us Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
     
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/8619867755983" target="_blank" class="contact-btn">Chat on WhatsApp</a>
-
-    <!-- Address with extra space -->
-    <p style="margin-top: 40px;">Address: Room 803, Unit 2, Building 8, Hongling South Road, Luohu District, Shenzhen, China</p>
+    <div class="contact-container">
+      <!-- 联系信息卡片 -->
+      <div class="contact-card">
+        <h3><i class="fas fa-user"></i> Contact Person</h3>
+        <div class="contact-info-item">
+          <strong>Ninety Lan</strong>
+          <p>Business Development Manager</p>
+        </div>
+        
+        <div class="contact-info-item">
+          <strong>Business Hours</strong>
+          <p>Monday - Friday: 9:00 AM - 9:00 PM (GMT+8)</p>
+          <p>Response time: Within 1 hour during business days</p>
+        </div>
+        
+        <div class="contact-actions">
+          <a href="https://wa.me/8619867755983" target="_blank" class="contact-btn whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+          <a href="mailto:1974181001@qq.com" class="contact-btn email-btn">
+            <i class="fas fa-envelope"></i> Send Email
+          </a>
+        </div>
+      </div>
+      
+      <!-- 联系详情卡片 -->
+      <div class="contact-card">
+        <h3><i class="fas fa-address-book"></i> Contact Details</h3>
+        <div class="contact-info-item">
+          <strong>Email</strong>
+          <p><a href="mailto:1974181001@qq.com">1974181001@qq.com</a></p>
+        </div>
+        
+        <div class="contact-info-item">
+          <strong>Microsoft Teams</strong>
+          <p><a href="mailto:1974181001@qq.com">1974181001@qq.com</a></p>
+        </div>
+        
+        <div class="contact-info-item">
+          <strong>Phone</strong>
+          <p>+86 1986 775 5983</p>
+        </div>
+        
+        <div class="contact-info-item">
+          <strong>WeChat</strong>
+          <p>Available upon request</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 地址卡片 -->
+    <div class="address-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <h4>Office Address</h4>
+        <p>Room 803, Unit 2, Building 8, Hongling South Road, Luohu District, Shenzhen, China</p>
+      </div>
+    </div>
   </section>
 
   <!-- Footer Section -->
