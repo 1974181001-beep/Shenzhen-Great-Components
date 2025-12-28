@@ -414,38 +414,56 @@
       background: #c40000;
     }
 
-    /* Products List inside Electronic Products card */
+    /* 改进的产品列表样式 - 更加舒展 */
     .products-list {
       list-style: none;
-      margin: 15px 0 0 0;
+      margin: 20px 0 0 0;
       padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
 
     .products-list li {
       background: #fef2f2;
-      padding: 10px 15px;
-      border-radius: 8px;
+      padding: 14px 18px;
+      border-radius: 10px;
       color: #444444;
       font-weight: 500;
       display: flex;
       align-items: center;
-      gap: 10px;
       border: 1px solid #fecaca;
       transition: all 0.2s ease;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+      font-size: 1rem;
       text-align: left;
-    }
-
-    .products-list li:last-child {
-      margin-bottom: 0;
+      position: relative;
+      padding-left: 45px; /* 增加左边距给图标留空间 */
     }
 
     .products-list li:before {
       content: "✓";
       color: #c40000;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 50%;
+      border: 1px solid #c40000;
+    }
+
+    .products-list li:hover {
+      background: #fee2e2;
+      border-color: #c40000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(196, 0, 0, 0.1);
     }
 
     /* Contact Section */
@@ -548,6 +566,17 @@
       .carousel-btn.next {
         right: 10px;
       }
+      
+      .products-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      
+      .products-list li {
+        padding: 12px 16px;
+        padding-left: 42px;
+        font-size: 0.95rem;
+      }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -589,9 +618,9 @@
 
   <!-- Products & Services Section -->
   <section id="products" class="products-section">
-    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #f1f5f9;">
-      <i class="fas fa-box" style="font-size: 2.5rem; color: #c40000;"></i>
-      <h2>Products & Services</h2>
+   <h2 style="margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #f1f5f9;">
+  📦 Products & Services
+</h2>
     </div>
 
     <!-- Services Grid - Four Cards -->
