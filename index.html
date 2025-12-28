@@ -243,136 +243,967 @@
   </div>
 </section>
 
-<!-- Products & Services Section -->
-<section id="products">
-  <h2>📦 Products & Services</h2>
-  <p>We provide 100% new and original electronic components from leading global manufacturers and franchises, including:</p>
-  
-  <!-- Advanced Brand Carousel -->
-  <div class="brand-carousel-wrapper">
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-item"><img src="images/ti-logo.png" alt="TI Logo"></div>
-        <div class="carousel-item"><img src="images/adi-logo.png" alt="ADI Logo"></div>
-        <div class="carousel-item"><img src="images/st-logo.png" alt="STMicroelectronics Logo"></div>
-        <div class="carousel-item"><img src="images/nxp-logo.png" alt="NXP Logo"></div>
-        <div class="carousel-item"><img src="images/microchip-logo.png" alt="Microchip Logo"></div>
-        <div class="carousel-item"><img src="images/xilinx-logo.png" alt="Xilinx Logo"></div>
-        <div class="carousel-item"><img src="images/skyworks-logo.png" alt="Skyworks Logo"></div>
-        <div class="carousel-item"><img src="images/murata-logo.png" alt="Murata Logo"></div>
-        <div class="carousel-item"><img src="images/tdk-logo.png" alt="TDK Logo"></div>
-        <div class="carousel-item"><img src="images/xmos-logo.png" alt="XMOS Logo"></div>
-        <div class="carousel-item"><img src="images/jingyan-logo.png" alt="Jingyan Logo"></div>
-      </div>
-    </div>
-    <button class="carousel-btn prev">&#10094;</button>
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
-  
-  <p>We offer stock and lead time buying options to ensure timely and efficient delivery of your components.</p>
-
-  <p>In addition, we provide assembly services through our SMT (Surface Mount Technology) manufacturing partners. This ensures that all your production and assembly needs are covered.</p>
-  
-  <p>We are well-versed in sourcing from Huaqiangbei, and can help you find various electronic products, including:</p>
-  <ul>
-    <li>Computers and tablets</li>
-    <li>LED displays</li>
-    <li>Smart watches and accessories</li>
-    <li>And more...</li>
-  </ul>
-  
-  <p>Additionally, we are active on Alibaba, offering mobile power banks and portable power stations, providing reliable solutions for outdoor emergency power and home energy storage. Support trail orders and custom design, worldwide shipping, always welcome for more information!</p>
-</section>
-
-<!-- Advanced Carousel CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chip Brand Alternatives</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-.brand-carousel-wrapper {
-  position: relative;
-  max-width: 1000px;
-  margin: 30px auto;
-  overflow: hidden;
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif;}
+body {background:#f8fafc; color:#1e293b; line-height:1.6;}
+
+.container {max-width:1400px; margin:0 auto; padding:20px;}
+
+/* Header */
+.page-header {
+    text-align: center;
+    padding: 50px 0 40px;
 }
-.carousel {
-  perspective: 1000px;
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #1e3a8a;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-  transform-style: preserve-3d;
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-weight: 400;
 }
-.carousel-item {
-  flex: 0 0 200px;
-  margin: 0 15px;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  transform-origin: center center;
+
+/* Carousel */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 40px 0 80px;
+    overflow: hidden;
+    user-select: none;
 }
-.carousel-item img {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+.brands-carousel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    padding: 20px 0;
+    min-height: 400px;
 }
+
+.brand-card {
+    flex: 0 0 380px;
+    margin: 0 20px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: grab;
+    transform-origin: center center;
+    position: relative;
+}
+
+.brand-card:active {
+    cursor: grabbing;
+}
+
+.brand-card.active {
+    transform: scale(1.05);
+    z-index: 5;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-color: #3b82f6;
+}
+
+.brand-card.prev {
+    transform: translateX(-60px) scale(0.85);
+    opacity: 0.8;
+    z-index: 4;
+}
+
+.brand-card.next {
+    transform: translateX(60px) scale(0.85);
+    opacity: 0.8;
+    z-index: 4;
+}
+
+.brand-card.prev-prev,
+.brand-card.next-next {
+    opacity: 0.4;
+    transform: scale(0.7);
+    z-index: 3;
+}
+
+/* Brand header with red background */
+.foreign-brand {
+    padding: 30px;
+    background-color: #c40000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 140px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brand logo placeholders */
+.foreign-brand::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.brand-card[data-brand="ti"] .foreign-brand::before { content: 'TI'; }
+.brand-card[data-brand="adi"] .foreign-brand::before { content: 'ADI'; }
+.brand-card[data-brand="st"] .foreign-brand::before { content: 'ST'; }
+.brand-card[data-brand="infineon"] .foreign-brand::before { content: 'IFX'; }
+.brand-card[data-brand="microchip"] .foreign-brand::before { content: 'MCHP'; }
+.brand-card[data-brand="nxp"] .foreign-brand::before { content: 'NXP'; }
+.brand-card[data-brand="intel"] .foreign-brand::before { content: 'INTEL'; }
+.brand-card[data-brand="skyworks"] .foreign-brand::before { content: 'SWKS'; }
+.brand-card[data-brand="murata"] .foreign-brand::before { content: 'MUR'; }
+.brand-card[data-brand="xmos"] .foreign-brand::before { content: 'XMOS'; }
+.brand-card[data-brand="jingyan"] .foreign-brand::before { content: 'JY'; }
+
+.foreign-brand h3 {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.foreign-brand .brand-name {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 500;
+    max-width: 70%;
+}
+
+/* Alternatives section */
+.domestic-alternatives {
+    padding: 25px;
+}
+
+.domestic-alternatives h4 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.domestic-alternatives h4 i {
+    color: #ef4444;
+}
+
+.alternative-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.alt-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e40af;
+}
+
+.alt-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #eff6ff;
+    color: #1e40af;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* Carousel navigation buttons */
 .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.4);
-  color: white;
-  border: none;
-  font-size: 28px;
-  padding: 10px 15px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  transition: background 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+    z-index: 10;
+    color: #1e3a8a;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .carousel-btn:hover {
-  background-color: rgba(0,0,0,0.7);
+    background-color: #eff6ff;
+    transform: translateY(-50%) scale(1.1);
 }
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* Dots indicator */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #3b82f6;
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background: #94a3b8;
+}
+
+/* Products & Services Section */
+.products-section {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 60px 0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0;
+}
+
+.section-header i {
+    font-size: 2.5rem;
+    color: #3b82f6;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content-block {
+    margin-bottom: 35px;
+}
+
+.content-block p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* Dual Service Cards */
+.service-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #f1f5f9;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+}
+
+.service-card.international {
+    border-left: 5px solid #1e3a8a;
+}
+
+.service-card.domestic {
+    border-left: 5px solid #c40000;
+}
+
+.service-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.service-card-header i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-card.domestic .service-card-header i {
+    background: linear-gradient(135deg, #c40000 0%, #ff4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-card-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 0;
+}
+
+.service-card.domestic .service-card-header h3 {
+    color: #c40000;
+}
+
+.service-features {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.service-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.service-features li:before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ecfdf5;
+    border-radius: 50%;
+}
+
+.service-card.domestic .service-features li:before {
+    color: #c40000;
+    background: #fee2e2;
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid #0ea5e9;
+    padding: 30px;
+    border-radius: 16px;
+    margin: 40px 0;
+}
+
+.highlight-box p {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #0369a1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.service-item {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 2px solid #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    border-color: #3b82f6;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: #1e3a8a;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-item h3 i {
+    color: #10b981;
+}
+
+.service-item p {
+    color: #64748b;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Products List */
+.products-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.products-list li {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: #475569;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.products-list li:hover {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    transform: translateY(-3px);
+}
+
+.products-list li:before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* CTA Box */
+.cta-box {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-box h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.cta-box p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: white;
+    color: #1e3a8a;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    background: #f0f9ff;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .service-cards-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
 
 @media (max-width: 768px) {
-  .carousel-item { flex: 0 0 150px; }
+    .brand-card {
+        flex: 0 0 320px;
+        margin: 0 15px;
+    }
+    
+    .carousel-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next {
+        right: 10px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .products-section {
+        padding: 30px 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-card {
+        padding: 30px 25px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-box {
+        padding: 40px 25px;
+    }
+    
+    .cta-box h3 {
+        font-size: 1.7rem;
+    }
 }
+
 @media (max-width: 480px) {
-  .carousel-item { flex: 0 0 120px; }
+    .brand-card {
+        flex: 0 0 280px;
+        margin: 0 10px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .products-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
 }
 </style>
+</head>
+<body>
+<div class="container">
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Chip Brand Solutions</h1>
+        <p>Your trusted partner for both international semiconductor brands and Chinese domestic alternatives</p>
+    </header>
+    
+    <!-- Carousel Section -->
+    <div class="carousel-wrapper">
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="brands-carousel" id="brandsContainer"></div>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
 
-<!-- Advanced Carousel JS -->
+    <!-- Products & Services Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <i class="fas fa-box"></i>
+            <h2>Products & Services</h2>
+        </div>
+        
+        <!-- Dual Service Cards -->
+        <div class="service-cards-container">
+            <!-- International Brands Card -->
+            <div class="service-card international">
+                <div class="service-card-header">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>International Brands</h3>
+                </div>
+                <p>We provide 100% new and original electronic components from leading global manufacturers and franchises:</p>
+                <ul class="service-features">
+                    <li>Texas Instruments (TI)</li>
+                    <li>Analog Devices Inc. (ADI)</li>
+                    <li>STMicroelectronics (ST)</li>
+                    <li>Infineon Technologies</li>
+                    <li>Microchip Technology</li>
+                    <li>NXP Semiconductors</li>
+                    <li>Intel Corporation</li>
+                    <li>Skyworks Solutions</li>
+                </ul>
+            </div>
+            
+            <!-- Domestic Alternatives Card -->
+            <div class="service-card domestic">
+                <div class="service-card-header">
+                    <i class="fas fa-industry"></i>
+                    <h3>Chinese Domestic Alternatives</h3>
+                </div>
+                <p>Expert in sourcing high-quality Chinese domestic alternatives for semiconductor brands:</p>
+                <ul class="service-features">
+                    <li>SGMICRO (for TI/ADI)</li>
+                    <li>3PEAK (for Analog ICs)</li>
+                    <li>GOKE Technology (for ST)</li>
+                    <li>HDSC (for MCUs)</li>
+                    <li>StarPower Semiconductor (for Infineon)</li>
+                    <li>GigaDevice (for Microchip)</li>
+                    <li>Allwinner Technology (for NXP)</li>
+                    <li>Loongson Technology (for Intel)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="content-block">
+            <div class="highlight-box">
+                <p>We offer stock and lead time buying options to ensure timely and efficient delivery of your components, with flexible sourcing strategies for both international and domestic solutions.</p>
+            </div>
+        </div>
+        
+        <div class="content-block">
+            <p>In addition to component sourcing, we provide comprehensive assembly services through our SMT (Surface Mount Technology) manufacturing partners. This ensures that all your production and assembly needs are covered from start to finish.</p>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3><i class="fas fa-industry"></i> SMT Assembly</h3>
+                    <p>Professional surface mount technology assembly with high precision and quality control standards.</p>
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-cogs"></i> PCB Assembly</h3>
+                    <p>Complete PCB assembly services from prototyping to mass production with rigorous testing.</p>
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-microchip"></i> Component Sourcing</h3>
+                    <p>Reliable sourcing of both international and domestic electronic components with quality assurance.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-block">
+            <p>We are well-versed in sourcing from Huaqiangbei, China's largest electronics market, and can help you find various electronic products, including:</p>
+            
+            <ul class="products-list">
+                <li>Computers and tablets</li>
+                <li>LED displays and lighting</li>
+                <li>Smart watches and accessories</li>
+                <li>Consumer electronics</li>
+                <li>IoT devices and sensors</li>
+                <li>Mobile accessories</li>
+            </ul>
+        </div>
+        
+        <div class="content-block">
+            <p>Additionally, we are active on Alibaba, offering mobile power banks and portable power stations, providing reliable solutions for outdoor emergency power and home energy storage needs.</p>
+        </div>
+        
+        <div class="cta-box">
+            <h3>Ready to Start Your Project?</h3>
+            <p>Support trial orders and custom design, worldwide shipping available. Whether you need international brands or domestic alternatives, we've got you covered!</p>
+            <a href="mailto:1974181001@qq.com" class="cta-button">
+                <i class="fas fa-envelope"></i> Contact Us Today
+            </a>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">Email: 1974181001@qq.com</p>
+        </div>
+    </section>
+</div>
+
 <script>
-const track = document.querySelector('.carousel-track');
-const items = Array.from(track.children);
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
+const brandsData = [
+    {name:"TI", fullName:"Texas Instruments", category:"analog", alternatives:[{name:"SGMICRO",desc:"Analog ICs, Power Management ICs"},{name:"3PEAK",desc:"Analog ICs, Signal Chain Products"}]},
+    {name:"ADI", fullName:"Analog Devices Inc.", category:"analog", alternatives:[{name:"SILERGY",desc:"Power Management ICs, Analog Chips"},{name:"3PEAK",desc:"High-performance Analog ICs"}]},
+    {name:"ST", fullName:"STMicroelectronics", category:"mcu", alternatives:[{name:"GOKE Technology",desc:"MCUs, Security Chips"},{name:"HDSC",desc:"32-bit MCUs, Automotive Chips"}]},
+    {name:"Infineon", fullName:"Infineon Technologies", category:"power", alternatives:[{name:"StarPower Semiconductor",desc:"IGBT Modules, Power Devices"},{name:"CR Microelectronics",desc:"Power Semiconductors, Modules"}]},
+    {name:"Microchip", fullName:"Microchip Technology", category:"mcu", alternatives:[{name:"GigaDevice",desc:"ARM Cortex-M Series MCUs"},{name:"CMSemicon",desc:"8-bit/32-bit MCUs"}]},
+    {name:"NXP", fullName:"NXP Semiconductors", category:"mcu", alternatives:[{name:"Allwinner Technology",desc:"Multimedia Application Processors"},{name:"Rockchip",desc:"High-performance Application Processors"}]},
+    {name:"Intel", fullName:"Intel Corporation", category:"cpu", alternatives:[{name:"Loongson Technology",desc:"Proprietary Architecture CPUs"},{name:"Phytium Technology",desc:"ARM-based Server CPUs"}]},
+    {name:"Skyworks", fullName:"Skyworks Solutions", category:"rf", alternatives:[{name:"Maxscend Microelectronics",desc:"RF Switches, LNAs"},{name:"WiseWave",desc:"5G RF Front-end Modules"}]},
+    {name:"Murata", fullName:"Murata Manufacturing", category:"rf", alternatives:[{name:"Sunlord Electronics",desc:"Inductors, Filters"},{name:"Microgate Technology",desc:"Inductors, RF Components"}]},
+    {name:"XMOS", fullName:"XMOS Limited", category:"cpu", alternatives:[{name:"Ingenic Semiconductor",desc:"Embedded CPUs, Multimedia Processors"},{name:"Rockchip",desc:"Multimedia Application Processors"}]},
+    {name:"Jingyan", fullName:"Taiwan Jingyan", category:"analog", alternatives:[{name:"Shanghai Belling",desc:"Analog ICs, Power Management"},{name:"SGMICRO",desc:"Analog ICs, Power Management ICs"}]}
+];
 
-let currentIndex = 0;
+const categoryMap = {
+    mcu:"MCU / Microcontrollers", 
+    analog:"Analog / Power ICs", 
+    power:"Power Semiconductors", 
+    rf:"RF / Wireless", 
+    cpu:"CPU / Processors"
+};
 
-function updateCarousel() {
-  items.forEach((item, index) => {
-    const offset = index - currentIndex;
-    const scale = Math.max(0.6, 1 - Math.abs(offset) * 0.2);
-    const zIndex = items.length - Math.abs(offset);
-    const opacity = Math.max(0.3, 1 - Math.abs(offset) * 0.3);
-    const rotateY = offset * 20;
-    item.style.transform = `translateX(${offset * 220}px) scale(${scale}) rotateY(${rotateY}deg)`;
-    item.style.zIndex = zIndex;
-    item.style.opacity = opacity;
-  });
+let activeIndex = 0;
+let filteredBrands = brandsData;
+let isDragging = false;
+let startPosition = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+
+function renderCarousel() {
+    const container = document.getElementById('brandsContainer');
+    container.innerHTML = '';
+    
+    filteredBrands.forEach((brand, i) => {
+        const div = document.createElement('div');
+        div.className = 'brand-card';
+        div.setAttribute('data-brand', brand.name.toLowerCase());
+        div.innerHTML = `
+            <div class="foreign-brand">
+                <h3>${brand.name}</h3>
+                <div class="brand-name">${brand.fullName}</div>
+            </div>
+            <div class="domestic-alternatives">
+                <h4><i class="fas fa-exchange-alt"></i> Domestic Alternatives</h4>
+                ${brand.alternatives.map(a => `
+                    <div class="alternative-item">
+                        <div class="alt-name">${a.name}</div>
+                        <div class="alt-desc">${a.desc}</div>
+                        <div class="category-tag">${categoryMap[brand.category]}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        
+        // Add drag event listeners
+        div.addEventListener('mousedown', startDrag);
+        div.addEventListener('touchstart', startDrag);
+        div.addEventListener('click', (e) => {
+            if (Math.abs(currentTranslate - prevTranslate) < 5) {
+                setActiveCard(i);
+            }
+        });
+        
+        container.appendChild(div);
+    });
+    
+    updateCarousel();
+    updateDots();
+    updateButtons();
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + items.length) % items.length;
-  updateCarousel();
+function setActiveCard(index) {
+    if (index >= 0 && index < filteredBrands.length) {
+        activeIndex = index;
+        updateCarousel();
+        updateDots();
+        updateButtons();
+    }
+}
+
+function updateCarousel() {
+    const cards = document.querySelectorAll('.brand-card');
+    const carousel = document.getElementById('brandsContainer');
+    
+    cards.forEach((card, i) => {
+        card.className = 'brand-card';
+        card.setAttribute('data-brand', filteredBrands[i].name.toLowerCase());
+        
+        if (i === activeIndex) {
+            card.classList.add('active');
+        } else if (i === activeIndex - 1) {
+            card.classList.add('prev');
+        } else if (i === activeIndex + 1) {
+            card.classList.add('next');
+        } else if (i === activeIndex - 2) {
+            card.classList.add('prev-prev');
+        } else if (i === activeIndex + 2) {
+            card.classList.add('next-next');
+        }
+    });
+    
+    const offset = -activeIndex * 420;
+    carousel.style.transform = `translateX(${offset}px)`;
+}
+
+function updateDots() {
+    const dotsContainer = document.getElementById('carouselDots');
+    dotsContainer.innerHTML = '';
+    
+    filteredBrands.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${i === activeIndex ? 'active' : ''}`;
+        dot.addEventListener('click', () => setActiveCard(i));
+        dotsContainer.appendChild(dot);
+    });
+}
+
+function updateButtons() {
+    document.querySelector('.carousel-btn.prev').disabled = activeIndex === 0;
+    document.querySelector('.carousel-btn.next').disabled = activeIndex === filteredBrands.length - 1;
+}
+
+function startDrag(e) {
+    if (!e.target.closest('.brand-card')) return;
+    
+    isDragging = true;
+    startPosition = getPositionX(e);
+    prevTranslate = currentTranslate;
+    
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('touchmove', drag);
+    document.addEventListener('touchend', endDrag);
+    
+    e.preventDefault();
+}
+
+function drag(e) {
+    if (!isDragging) return;
+    
+    const currentPosition = getPositionX(e);
+    currentTranslate = prevTranslate + currentPosition - startPosition;
+    
+    requestAnimationFrame(() => {
+        const carousel = document.getElementById('brandsContainer');
+        const baseOffset = -activeIndex * 420;
+        carousel.style.transform = `translateX(${baseOffset + currentTranslate}px)`;
+    });
+}
+
+function endDrag() {
+    isDragging = false;
+    
+    const movedBy = currentTranslate;
+    
+    if (Math.abs(movedBy) > 50) {
+        if (movedBy > 0 && activeIndex > 0) {
+            activeIndex--;
+        } else if (movedBy < 0 && activeIndex < filteredBrands.length - 1) {
+            activeIndex++;
+        }
+    }
+    
+    currentTranslate = 0;
+    updateCarousel();
+    updateDots();
+    updateButtons();
+    
+    document.removeEventListener('mousemove', drag);
+    document.removeEventListener('mouseup', endDrag);
+    document.removeEventListener('touchmove', drag);
+    document.removeEventListener('touchend', endDrag);
+}
+
+function getPositionX(e) {
+    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+}
+
+// Navigation button event listeners
+document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
+    if (activeIndex > 0) {
+        activeIndex--;
+        updateCarousel();
+        updateDots();
+        updateButtons();
+    }
 });
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % items.length;
-  updateCarousel();
+
+document.querySelector('.carousel-btn.next').addEventListener('click', () => {
+    if (activeIndex < filteredBrands.length - 1) {
+        activeIndex++;
+        updateCarousel();
+        updateDots();
+        updateButtons();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' && activeIndex > 0) {
+        activeIndex--;
+        updateCarousel();
+        updateDots();
+        updateButtons();
+    } else if (e.key === 'ArrowRight' && activeIndex < filteredBrands.length - 1) {
+        activeIndex++;
+        updateCarousel();
+        updateDots();
+        updateButtons();
+    }
 });
 
 // Initialize
-updateCarousel();
+window.addEventListener('resize', updateCarousel);
+document.addEventListener('DOMContentLoaded', renderCarousel);
 </script>
 
 <!-- Contact Section -->
