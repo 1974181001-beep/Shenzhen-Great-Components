@@ -248,18 +248,99 @@
   <h2>📦 Products & Services</h2>
   <p>We provide 100% new and original electronic components from leading global manufacturers and franchises, including:</p>
   
-  <!-- Brand logos section -->
-  <div class="brand-logos">
-    <img src="images/ti-logo.png" alt="TI Logo" class="brand-logo">
-    <img src="images/adi-logo.png" alt="ADI Logo" class="brand-logo">
-    <img src="images/st-logo.png" alt="STMicroelectronics Logo" class="brand-logo">
-    <img src="images/nxp-logo.png" alt="NXP Logo" class="brand-logo">
-    <img src="images/microchip-logo.png" alt="Microchip Logo" class="brand-logo">
-    <img src="images/xilinx-logo.png" alt="Xilinx Logo" class="brand-logo">
-    <img src="images/skyworks-logo.png" alt="Skyworks Logo" class="brand-logo">
-    <img src="images/murata-logo.png" alt="Murata Logo" class="brand-logo">
-    <img src="images/tdk-logo.png" alt="TDK Logo" class="brand-logo">
+ <!-- Brand logos carousel section -->
+<section id="brand-carousel">
+  <h2>Our Trusted Brands</h2>
+  
+  <!-- Carousel container -->
+  <div class="carousel-container">
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="carousel">
+      <div class="brand-logos">
+        <img src="images/ti-logo.png" alt="TI Logo" class="brand-logo">
+        <img src="images/adi-logo.png" alt="ADI Logo" class="brand-logo">
+        <img src="images/st-logo.png" alt="STMicroelectronics Logo" class="brand-logo">
+        <img src="images/nxp-logo.png" alt="NXP Logo" class="brand-logo">
+        <img src="images/microchip-logo.png" alt="Microchip Logo" class="brand-logo">
+        <img src="images/xilinx-logo.png" alt="Xilinx Logo" class="brand-logo">
+        <img src="images/skyworks-logo.png" alt="Skyworks Logo" class="brand-logo">
+        <img src="images/murata-logo.png" alt="Murata Logo" class="brand-logo">
+        <img src="images/tdk-logo.png" alt="TDK Logo" class="brand-logo">
+      </div>
+    </div>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
   </div>
+</section>
+
+<!-- Add some styling for the carousel -->
+<style>
+  /* Carousel container */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* You can adjust the max width */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .brand-logos {
+    display: flex;
+  }
+
+  .brand-logo {
+    width: 120px;
+    height: auto;
+    margin: 10px;
+  }
+  
+  /* Arrows */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .prev {
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  .next {
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  /* Optional: Hover effect for the arrows */
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+</style>
+
+<!-- JavaScript to handle carousel movement -->
+<script>
+  let currentIndex = 0;
+
+  function moveSlide(direction) {
+    const totalImages = document.querySelectorAll('.brand-logo').length;
+    const slideWidth = document.querySelector('.brand-logo').offsetWidth + 20; // 20px margin
+
+    // Move the carousel
+    currentIndex = (currentIndex + direction + totalImages) % totalImages;
+    const newTransformValue = -(currentIndex * slideWidth);
+    document.querySelector('.carousel').style.transform = `translateX(${newTransformValue}px)`;
+  }
+</script>
 
   <p>We offer stock and lead time buying options to ensure timely and efficient delivery of your components.</p>
 
