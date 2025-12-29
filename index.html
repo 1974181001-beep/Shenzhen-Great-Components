@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shenzhen Great Components</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* 全局样式 */
     * {
@@ -17,6 +18,7 @@
       background-color: #f5f5f5;
       color: #333;
       scroll-behavior: smooth;
+      padding-top: 70px; /* 为固定导航栏留出空间 */
     }
 
     h1, h2, h3, p {
@@ -30,17 +32,17 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #c40000; /* 极简高级红色 */
+      background-color: #c40000;
       display: flex;
       justify-content: center;
       padding: 15px 0;
-      z-index: 100;
+      z-index: 1000;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     nav {
       display: flex;
-      gap: 50px; /* 导航间距大 */
+      gap: 50px;
     }
 
     nav a {
@@ -52,13 +54,13 @@
     }
 
     nav a:hover {
-      color: #ffdb58; /* 悬浮时颜色 */
+      color: #ffdb58;
     }
 
     /* Hero Section */
     section.hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero.jpg') no-repeat center center;
+      height: calc(100vh - 70px);
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -67,18 +69,20 @@
       text-align: center;
       color: white;
       padding: 0 20px;
+      margin-top: 70px;
     }
 
     section.hero h1 {
-      font-size: 4em;
+      font-size: 3.5em;
       margin-bottom: 20px;
       font-weight: 600;
     }
 
     section.hero p {
-      font-size: 1.4em;
+      font-size: 1.3em;
       max-width: 800px;
       margin-bottom: 20px;
+      line-height: 1.6;
     }
 
     .cta {
@@ -89,30 +93,34 @@
       text-decoration: none;
       border-radius: 30px;
       transition: 0.3s;
+      font-weight: 600;
+      margin-top: 20px;
     }
 
     .cta:hover {
-      background-color: #007bff;
-      color: white;
+      background-color: #ffcc00;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
     /* 内容页通用样式 */
     section {
-      padding: 100px 20px 80px;
+      padding: 80px 20px;
       max-width: 1200px;
-      margin: 80px auto;
+      margin: 40px auto;
       background-color: white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       border-radius: 10px;
     }
 
     section h2 {
-      font-size: 2.5em;
+      font-size: 2.3em;
       font-weight: 600;
       text-align: center;
       position: relative;
       padding-bottom: 15px;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
+      color: #222;
     }
 
     section h2:after {
@@ -127,21 +135,17 @@
     }
 
     /* ==================== About Us 样式 ==================== */
-    
-    /* About Us 整体样式 */
     #about {
       position: relative;
-      padding: 80px 50px 60px;
     }
     
-    /* 关于我们内容块样式 */
     .about-content {
       max-width: 900px;
       margin: 0 auto;
     }
     
     .about-block {
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       padding: 25px 30px;
       background-color: #fef2f2;
       border-left: 4px solid #c40000;
@@ -152,6 +156,7 @@
     .about-block:hover {
       background-color: #fee2e2;
       transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(196, 0, 0, 0.1);
     }
     
     .about-block p {
@@ -170,15 +175,15 @@
     /* 视频部分样式 */
     .video-section {
       text-align: center;
-      margin-top: 60px;
-      padding: 40px 0 0;
+      margin-top: 50px;
+      padding-top: 40px;
       border-top: 1px solid #eee;
     }
     
     .video-section h3 {
       font-size: 1.8rem;
       color: #333;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       font-weight: 600;
     }
     
@@ -201,7 +206,7 @@
     .video-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%;
       height: 0;
       border-radius: 8px;
       overflow: hidden;
@@ -230,6 +235,7 @@
       justify-content: center;
       color: white;
       text-align: center;
+      padding: 20px;
     }
     
     .video-placeholder i {
@@ -247,11 +253,12 @@
     .video-placeholder p {
       color: #aaa;
       font-size: 1rem;
+      max-width: 500px;
     }
     
     /* ==================== Products & Services 样式 ==================== */
     .products-section {
-      padding: 80px 50px 60px;
+      position: relative;
     }
     
     /* 服务网格样式 */
@@ -269,13 +276,13 @@
       border-left: 4px solid #c40000;
       transition: all 0.3s ease;
       height: 100%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
     
     .service-item:hover {
       background-color: #fef2f2;
-      transform: translateX(5px);
-      box-shadow: 0 8px 25px rgba(196, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(196, 0, 0, 0.1);
     }
     
     .service-item h3 {
@@ -298,7 +305,7 @@
       text-align: left;
     }
     
-    /* Carousel 样式 - 保持一致风格 */
+    /* Carousel 样式 - 隐藏箭头，强化中间卡片 */
     .carousel-wrapper {
       position: relative;
       width: 100%;
@@ -306,6 +313,7 @@
       overflow: hidden;
       user-select: none;
       min-height: 400px;
+      padding: 0;
     }
     
     .brands-carousel {
@@ -322,7 +330,7 @@
       flex: 0 0 380px;
       margin: 0 20px;
       background: white;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.06);
       border-left: 4px solid #c40000;
@@ -336,22 +344,27 @@
       cursor: grabbing;
     }
     
+    /* 强化中间卡片效果 */
     .brand-card.active {
-      transform: scale(1.05);
+      transform: scale(1.08);
       z-index: 5;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 25px 50px rgba(196, 0, 0, 0.25);
       border-left-width: 6px;
+      filter: none;
+      opacity: 1;
     }
     
     .brand-card.prev {
       transform: translateX(-60px) scale(0.85);
-      opacity: 0.8;
+      opacity: 0.75;
+      filter: brightness(0.95);
       z-index: 4;
     }
     
     .brand-card.next {
       transform: translateX(60px) scale(0.85);
-      opacity: 0.8;
+      opacity: 0.75;
+      filter: brightness(0.95);
       z-index: 4;
     }
     
@@ -374,24 +387,6 @@
       min-height: 140px;
       position: relative;
       overflow: hidden;
-    }
-    
-    .foreign-brand::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
     }
     
     .foreign-brand h3 {
@@ -456,45 +451,9 @@
       border: 1px solid #fecaca;
     }
     
+    /* 隐藏左右箭头按钮 */
     .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      cursor: pointer;
-      z-index: 10;
-      color: #c40000;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #c40000;
-    }
-    
-    .carousel-btn:hover {
-      background-color: #c40000;
-      color: white;
-      transform: translateY(-50%) scale(1.1);
-    }
-    
-    .carousel-btn:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-      transform: translateY(-50%) scale(1);
-    }
-    
-    .carousel-btn.prev {
-      left: 20px;
-    }
-    
-    .carousel-btn.next {
-      right: 20px;
+      display: none !important;
     }
     
     .carousel-dots {
@@ -505,24 +464,28 @@
     }
     
     .carousel-dot {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background: #e2e8f0;
+      background: #d1d5db;
       cursor: pointer;
       transition: all 0.3s ease;
+      border: 2px solid transparent;
     }
     
     .carousel-dot.active {
       background: #c40000;
-      transform: scale(1.2);
+      transform: scale(1.4);
+      border-color: #ffffff;
+      box-shadow: 0 0 0 2px #c40000;
     }
     
     .carousel-dot:hover {
       background: #c40000;
+      transform: scale(1.2);
     }
     
-    /* 改进的产品列表样式 */
+    /* 产品列表样式 */
     .products-list {
       list-style: none;
       margin: 20px 0 0 0;
@@ -576,7 +539,6 @@
     
     /* ==================== Contact Us 样式 ==================== */
     .contact-section {
-      padding: 80px 50px 60px;
       position: relative;
     }
     
@@ -590,17 +552,17 @@
     /* 联系信息卡片 */
     .contact-card {
       background-color: #fef2f2;
-      padding: 35px;
+      padding: 30px;
       border-radius: 8px;
       border-left: 4px solid #c40000;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
     
     .contact-card:hover {
       background-color: #fee2e2;
-      transform: translateX(5px);
-      box-shadow: 0 8px 25px rgba(196, 0, 0, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(196, 0, 0, 0.1);
     }
     
     .contact-card h3 {
@@ -618,7 +580,7 @@
     
     .contact-info-item {
       margin-bottom: 20px;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
       border-bottom: 1px solid #fecaca;
     }
     
@@ -683,8 +645,8 @@
     
     .whatsapp-btn:hover {
       background-color: #128C7E;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
     }
     
     .email-btn {
@@ -696,8 +658,8 @@
     .email-btn:hover {
       background-color: #c40000;
       color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(196, 0, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(196, 0, 0, 0.2);
     }
     
     /* 地址卡片 */
@@ -739,17 +701,18 @@
     
     /* Footer */
     footer {
-      background-color: #c40000; /* 红色 */
+      background-color: #c40000;
       color: white;
       text-align: center;
       padding: 30px 20px;
-      margin-top: 40px;
+      margin-top: 60px;
     }
     
     footer p {
       font-size: 14px;
     }
     
+    /* 响应式设计 */
     @media screen and (max-width: 1024px) {
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -765,6 +728,10 @@
         grid-template-columns: 1fr;
         gap: 30px;
       }
+      
+      section.hero h1 {
+        font-size: 2.8em;
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -777,8 +744,8 @@
       }
       
       section {
-        padding: 60px 20px 40px;
-        margin: 60px auto;
+        padding: 60px 20px;
+        margin: 30px auto;
       }
       
       .services-grid {
@@ -789,20 +756,6 @@
       .brand-card {
         flex: 0 0 280px;
         margin: 0 10px;
-      }
-      
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-      
-      .carousel-btn.prev {
-        left: 10px;
-      }
-      
-      .carousel-btn.next {
-        right: 10px;
       }
       
       .products-list {
@@ -816,19 +769,14 @@
         font-size: 0.95rem;
       }
       
-      /* 响应式 About Us 样式 */
+      /* About Us 响应式 */
       #about, .products-section, .contact-section {
-        padding: 60px 20px 40px;
-      }
-      
-      #about h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
+        padding: 50px 20px;
       }
       
       .about-block {
         padding: 20px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
       }
       
       .about-block p {
@@ -836,7 +784,7 @@
       }
       
       .video-section {
-        margin-top: 40px;
+        margin-top: 30px;
       }
       
       .video-section h3 {
@@ -855,15 +803,32 @@
         width: 100%;
         justify-content: center;
       }
-    }
-    
-    @media screen and (max-width: 480px) {
+      
+      section.hero {
+        height: calc(100vh - 70px);
+        padding: 0 15px;
+      }
+      
       section.hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2em;
       }
       
       section.hero p {
-        font-size: 1.1rem;
+        font-size: 1.1em;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      nav {
+        gap: 15px;
+      }
+      
+      nav a {
+        font-size: 16px;
+      }
+      
+      section.hero h1 {
+        font-size: 1.8rem;
       }
       
       section h2 {
@@ -871,18 +836,28 @@
       }
       
       .service-item, .contact-card {
-        padding: 25px 20px;
+        padding: 20px 15px;
       }
       
       .service-item h3, .contact-card h3 {
         font-size: 1.2rem;
       }
+      
+      .brand-card {
+        flex: 0 0 260px;
+      }
+      
+      .carousel-wrapper {
+        min-height: 350px;
+      }
+      
+      .brands-carousel {
+        min-height: 350px;
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
   <!-- 导航栏 -->
   <header>
     <nav>
@@ -932,14 +907,12 @@
       <h3>Watch Our Introduction Video</h3>
       <div class="video-container">
         <div class="video-wrapper">
-          <!-- Replace this iframe with your YouTube video when available -->
-          <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
-          <!-- Video placeholder (visible if no video ID is provided) -->
+          <!-- 视频占位符 -->
           <div class="video-placeholder">
             <i class="fas fa-play-circle"></i>
             <h4>Company Introduction Video</h4>
-            <p>Replace with your YouTube video ID</p>
+            <p>Add your YouTube video ID to display your video here</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Example: https://www.youtube.com/watch?v=<strong>VIDEO_ID</strong></p>
           </div>
         </div>
       </div>
@@ -970,8 +943,9 @@
       </div>
     </div>
 
-    <!-- Carousel Section -->
+    <!-- Carousel Section - 已隐藏箭头，强化中间卡片 -->
     <div class="carousel-wrapper">
+      <!-- 箭头按钮已通过CSS隐藏 -->
       <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
       <div class="brands-carousel" id="brandsContainer"></div>
       <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
@@ -1167,8 +1141,13 @@
     }
 
     function updateButtons() {
-      document.querySelector('.carousel-btn.prev').disabled = activeIndex === 0;
-      document.querySelector('.carousel-btn.next').disabled = activeIndex === filteredBrands.length - 1;
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      
+      if (prevBtn && nextBtn) {
+        prevBtn.disabled = activeIndex === 0;
+        nextBtn.disabled = activeIndex === filteredBrands.length - 1;
+      }
     }
 
     function startDrag(e) {
@@ -1204,7 +1183,8 @@
       
       const movedBy = currentTranslate;
       
-      if (Math.abs(movedBy) > 50) {
+      // 调整滑动灵敏度（数值越小越灵敏）
+      if (Math.abs(movedBy) > 40) {
         if (movedBy > 0 && activeIndex > 0) {
           activeIndex--;
         } else if (movedBy < 0 && activeIndex < filteredBrands.length - 1) {
@@ -1228,7 +1208,7 @@
     }
 
     // Navigation button event listeners
-    document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
+    document.querySelector('.carousel-btn.prev')?.addEventListener('click', () => {
       if (activeIndex > 0) {
         activeIndex--;
         updateCarousel();
@@ -1237,7 +1217,7 @@
       }
     });
 
-    document.querySelector('.carousel-btn.next').addEventListener('click', () => {
+    document.querySelector('.carousel-btn.next')?.addEventListener('click', () => {
       if (activeIndex < filteredBrands.length - 1) {
         activeIndex++;
         updateCarousel();
@@ -1261,9 +1241,28 @@
       }
     });
 
-    // Initialize
+    // 添加滑动灵敏度说明
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCarousel();
+      
+      // 添加使用提示
+      console.log('Carousel ready! You can:');
+      console.log('1. Drag cards left/right to navigate');
+      console.log('2. Click on dots below to jump to specific card');
+      console.log('3. Use keyboard arrow keys (← →)');
+      console.log('4. Click on any card to select it');
+      
+      // 为视频占位符添加点击提示
+      const videoPlaceholder = document.querySelector('.video-placeholder');
+      if (videoPlaceholder) {
+        videoPlaceholder.addEventListener('click', function() {
+          alert('To add your video:\n1. Upload to YouTube\n2. Get the video ID from the URL\n3. Replace "your-video-id" in the iframe src\n\nExample: https://www.youtube.com/watch?v=dQw4w9WgXcQ\nVideo ID: dQw4w9WgXcQ');
+        });
+      }
+    });
+
+    // 窗口调整大小时重新计算轮播位置
     window.addEventListener('resize', updateCarousel);
-    document.addEventListener('DOMContentLoaded', renderCarousel);
   </script>
 </body>
 </html>
