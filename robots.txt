@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://1974181001-beep.github.io/Great-Components/sitemap.xml
+Sitemap: https://1974181001-beep.github.io/Shenzhen-Great-Components/sitemap.xml
